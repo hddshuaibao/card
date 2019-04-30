@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="none">
+<test name="NewTest1" >
+  <classes>
+	<class name="com.selenium.testCase.LoginTest"></class>
+	<class name="com.selenium.testCase.CardStuTest"></class>
+	<class name="com.selenium.testCase.CardTeacherTest"></class>
+	 
+  </classes>
+  
+</test>
+  <!--
+  不用的testcase放这里
+  <class name="com.selenium.testCase.LoginTest"></class>
+  <class name="com.selenium.testCase.AttendanceGClockTest"></class>
+  <class name="com.selenium.testCase.AttendanceGAddBciTest"></class>
+  <class name="com.selenium.testCase.CardTest"></class>
+  
+  <methods>
+	 <include name="testAddCard"></include>
+	 <include name="testDelCard"></include>
+	 <include name="testExport"></include>
+	 </methods> -->
+</suite> <!-- Suite -->

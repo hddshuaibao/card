@@ -1,0 +1,16 @@
+<project name="testng-xslt" basedir="." default="transform">
+<property name="lib.dir" value="lib"/>
+ <path id="test.classpath">
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+ </path>
+	 
+	<target name="transform">
+        <xslt in="/Users/space/eclipse-workspace/card/target/surefire-reports/testng-results.xml" style="/Users/space/eclipse-workspace/card/target/surefire-reports/testng-results.xsl"
+              out="/Users/space/eclipse-workspace/card/target/surefire-reports/output/index.html">
+            <param name="testNgXslt.outputDir" expression="/Users/space/eclipse-workspace/card/target/surefire-reports/output/"/>
+            <param name="testNgXslt.sortTestCaseLinks" expression="true"/>
+            <param name="testNgXslt.testDetailsFilter" expression="FAIL,SKIP,PASS"/>
+            <classpath refid="test.classpath"/>
+        </xslt>
+    </target>
+</project>

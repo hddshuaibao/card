@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
+  <test name="NewTest1(failed)">
+    <classes>
+      <class name="com.selenium.testCase.LoginTest">
+        <methods>
+          <include name="AfterTest"/>
+          <include name="BeforeClass"/>
+        </methods>
+      </class> <!-- com.selenium.testCase.LoginTest -->
+      <class name="com.selenium.testCase.CardStuTest">
+        <methods>
+          <include name="testExport"/>
+          <include name="afterClass"/>
+          <include name="testDelCard" invocation-numbers="0"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.selenium.testCase.CardStuTest -->
+      <class name="com.selenium.testCase.CardTeacherTest">
+        <methods>
+          <include name="AfterClass"/>
+          <include name="BeforeClass"/>
+        </methods>
+      </class> <!-- com.selenium.testCase.CardTeacherTest -->
+    </classes>
+  </test> <!-- NewTest1(failed) -->
+</suite> <!-- Failed suite [Suite] -->
