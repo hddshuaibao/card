@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
+  <test name="NewTest1(failed)">
+    <classes>
+      <class name="com.selenium.testCase.DormitoryDelBuildTest">
+        <methods>
+          <include name="delStuTest"/>
+          <include name="entryRoom"/>
+          <include name="BeforeClass"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.selenium.testCase.DormitoryDelBuildTest -->
+    </classes>
+  </test> <!-- NewTest1(failed) -->
+</suite> <!-- Failed suite [Suite] -->

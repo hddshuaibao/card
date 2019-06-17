@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="NewTest1"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="9.785">
+  <properties />
+  
+  
+            <testcase name="entryRoom" time="4.144" classname="com.selenium.testCase.DormitoryDelBuildTest" />
+                <testcase name="delStuTest" time="5.641" classname="com.selenium.testCase.DormitoryDelBuildTest" />
+      
+</testsuite>
