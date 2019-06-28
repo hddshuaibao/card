@@ -1,29 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="13" passed="13">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="16871" started-at="2019-06-17T08:41:20Z" finished-at="2019-06-17T08:41:37Z">
+  <suite name="Suite" duration-ms="95105" started-at="2019-06-28T09:22:53Z" finished-at="2019-06-28T09:24:29Z">
     <groups>
     </groups>
-    <test name="NewTest1" duration-ms="16871" started-at="2019-06-17T08:41:20Z" finished-at="2019-06-17T08:41:37Z">
+    <test name="NewTest1" duration-ms="95105" started-at="2019-06-28T09:22:53Z" finished-at="2019-06-28T09:24:29Z">
       <class name="com.selenium.testCase.DormitoryDelBuildTest">
-        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:com.selenium.testCase.DormitoryDelBuildTest@4566e5bd]" name="BeforeClass" is-config="true" duration-ms="7074" started-at="2019-06-17T16:41:20Z" finished-at="2019-06-17T16:41:27Z">
+        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:com.selenium.testCase.DormitoryDelBuildTest@b59d31]" name="BeforeClass" is-config="true" duration-ms="6712" started-at="2019-06-28T17:23:04Z" finished-at="2019-06-28T17:23:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeClass -->
-        <test-method status="PASS" signature="entryRoom()[pri:0, instance:com.selenium.testCase.DormitoryDelBuildTest@4566e5bd]" name="entryRoom" duration-ms="4144" started-at="2019-06-17T16:41:27Z" finished-at="2019-06-17T16:41:31Z">
+        <test-method status="PASS" signature="delBuild(java.lang.String, java.lang.String)[pri:0, instance:com.selenium.testCase.DormitoryDelBuildTest@b59d31]" name="delBuild" duration-ms="8680" started-at="2019-06-28T17:23:10Z" data-provider="delbuildinfo" finished-at="2019-06-28T17:23:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[自动化测试楼宇]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[该楼宇下有楼层信息]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delBuild -->
+        <test-method status="PASS" signature="delRoom()[pri:0, instance:com.selenium.testCase.DormitoryDelBuildTest@b59d31]" name="delRoom" duration-ms="6369" started-at="2019-06-28T17:23:19Z" finished-at="2019-06-28T17:23:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delRoom -->
+        <test-method status="PASS" signature="entryRoom()[pri:0, instance:com.selenium.testCase.DormitoryDelBuildTest@b59d31]" name="entryRoom" duration-ms="4121" started-at="2019-06-28T17:23:26Z" finished-at="2019-06-28T17:23:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- entryRoom -->
-        <test-method status="PASS" signature="delStuTest()[pri:0, instance:com.selenium.testCase.DormitoryDelBuildTest@4566e5bd]" name="delStuTest" duration-ms="5641" started-at="2019-06-17T16:41:31Z" depends-on-methods="com.selenium.testCase.DormitoryDelBuildTest.entryRoom" finished-at="2019-06-17T16:41:37Z">
+        <test-method status="PASS" signature="delStuTest()[pri:0, instance:com.selenium.testCase.DormitoryDelBuildTest@b59d31]" name="delStuTest" duration-ms="18197" started-at="2019-06-28T17:23:30Z" depends-on-methods="com.selenium.testCase.DormitoryDelBuildTest.entryRoom" finished-at="2019-06-28T17:23:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- delStuTest -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.selenium.testCase.DormitoryDelBuildTest@4566e5bd]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-06-17T16:41:37Z" finished-at="2019-06-17T16:41:37Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.selenium.testCase.DormitoryDelBuildTest@b59d31]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-06-28T17:23:48Z" finished-at="2019-06-28T17:23:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- com.selenium.testCase.DormitoryDelBuildTest -->
+      <class name="com.selenium.testCase.DormitoryAddBuildTest">
+        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:com.selenium.testCase.DormitoryAddBuildTest@11e21d0e]" name="BeforeClass" is-config="true" duration-ms="4239" started-at="2019-06-28T17:23:48Z" finished-at="2019-06-28T17:23:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeClass -->
+        <test-method status="PASS" signature="testAddBuild(java.lang.String, java.lang.String)[pri:0, instance:com.selenium.testCase.DormitoryAddBuildTest@11e21d0e]" name="testAddBuild" duration-ms="2428" started-at="2019-06-28T17:23:52Z" data-provider="addbuildinfo" finished-at="2019-06-28T17:23:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[自动化测试楼宇]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddBuild -->
+        <test-method status="PASS" signature="testAddRoom(java.lang.String, java.lang.String, int)[pri:0, instance:com.selenium.testCase.DormitoryAddBuildTest@11e21d0e]" name="testAddRoom" duration-ms="9760" started-at="2019-06-28T17:23:55Z" data-provider="addroominfo" finished-at="2019-06-28T17:24:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddRoom -->
+        <test-method status="PASS" signature="entryRoom()[pri:0, instance:com.selenium.testCase.DormitoryAddBuildTest@11e21d0e]" name="entryRoom" duration-ms="4122" started-at="2019-06-28T17:24:04Z" finished-at="2019-06-28T17:24:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- entryRoom -->
+        <test-method status="PASS" signature="testAddStu(int, java.lang.String)[pri:0, instance:com.selenium.testCase.DormitoryAddBuildTest@11e21d0e]" name="testAddStu" duration-ms="6645" started-at="2019-06-28T17:24:08Z" data-provider="addstuinfo" depends-on-methods="com.selenium.testCase.DormitoryAddBuildTest.entryRoom" finished-at="2019-06-28T17:24:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[学生更换照片4545]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddStu -->
+        <test-method status="PASS" signature="testAddStu(int, java.lang.String)[pri:0, instance:com.selenium.testCase.DormitoryAddBuildTest@11e21d0e]" name="testAddStu" duration-ms="3389" started-at="2019-06-28T17:24:15Z" data-provider="addstuinfo" depends-on-methods="com.selenium.testCase.DormitoryAddBuildTest.entryRoom" finished-at="2019-06-28T17:24:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[熙怡]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddStu -->
+        <test-method status="PASS" signature="testAddStu(int, java.lang.String)[pri:0, instance:com.selenium.testCase.DormitoryAddBuildTest@11e21d0e]" name="testAddStu" duration-ms="3395" started-at="2019-06-28T17:24:18Z" data-provider="addstuinfo" depends-on-methods="com.selenium.testCase.DormitoryAddBuildTest.entryRoom" finished-at="2019-06-28T17:24:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[听筠]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddStu -->
+        <test-method status="PASS" signature="testAddStu(int, java.lang.String)[pri:0, instance:com.selenium.testCase.DormitoryAddBuildTest@11e21d0e]" name="testAddStu" duration-ms="3365" started-at="2019-06-28T17:24:22Z" data-provider="addstuinfo" depends-on-methods="com.selenium.testCase.DormitoryAddBuildTest.entryRoom" finished-at="2019-06-28T17:24:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[湛蓝]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddStu -->
+        <test-method status="PASS" signature="testAddStu(int, java.lang.String)[pri:0, instance:com.selenium.testCase.DormitoryAddBuildTest@11e21d0e]" name="testAddStu" duration-ms="3381" started-at="2019-06-28T17:24:25Z" data-provider="addstuinfo" depends-on-methods="com.selenium.testCase.DormitoryAddBuildTest.entryRoom" finished-at="2019-06-28T17:24:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[水悦]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddStu -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.selenium.testCase.DormitoryAddBuildTest@11e21d0e]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-06-28T17:24:29Z" finished-at="2019-06-28T17:24:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.selenium.testCase.DormitoryAddBuildTest -->
+      <class name="com.selenium.testCase.LoginTest">
+        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:com.selenium.testCase.LoginTest@4df828d7]" name="BeforeClass" is-config="true" duration-ms="1062" started-at="2019-06-28T17:22:53Z" finished-at="2019-06-28T17:22:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeClass -->
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.selenium.testCase.LoginTest@4df828d7]" name="login" duration-ms="9006" started-at="2019-06-28T17:22:55Z" data-provider="logindata" finished-at="2019-06-28T17:23:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ghzdhcsxxadmin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[102684s]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[光海自动化测试学校管理员]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="AfterTest()[pri:0, instance:com.selenium.testCase.LoginTest@4df828d7]" name="AfterTest" is-config="true" duration-ms="84" started-at="2019-06-28T17:23:04Z" finished-at="2019-06-28T17:23:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+      </class> <!-- com.selenium.testCase.LoginTest -->
     </test> <!-- NewTest1 -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="NewTest1"
-           tests="2"
+           tests="4"
            failures="0"
            errors="0"
            skipped="0"
-           time="9.785">
+           time="37.367">
   <properties />
   
   
-            <testcase name="entryRoom" time="4.144" classname="com.selenium.testCase.DormitoryDelBuildTest" />
-                <testcase name="delStuTest" time="5.641" classname="com.selenium.testCase.DormitoryDelBuildTest" />
+            <testcase name="entryRoom" time="4.121" classname="com.selenium.testCase.DormitoryDelBuildTest" />
+                <testcase name="delRoom" time="6.369" classname="com.selenium.testCase.DormitoryDelBuildTest" />
+                <testcase name="delBuild" time="8.680" classname="com.selenium.testCase.DormitoryDelBuildTest" />
+                <testcase name="delStuTest" time="18.197" classname="com.selenium.testCase.DormitoryDelBuildTest" />
       
 </testsuite>

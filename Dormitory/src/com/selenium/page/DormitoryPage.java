@@ -364,4 +364,9 @@ public class DormitoryPage extends BasePage{
 			this.click(this.delStuCheckBtnEle());
 		}
 		
+		
+		
+		
+		
+		
 }

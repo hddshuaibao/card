@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="NewTest1"
-           tests="6"
+           tests="8"
            failures="0"
            errors="0"
            skipped="0"
-           time="24.304">
+           time="36.485">
   <properties />
   
   
-            <testcase name="testAddStu" time="3.369" classname="com.selenium.testCase.DormitoryAddBuildTest" />
-                <testcase name="entryRoom" time="4.140" classname="com.selenium.testCase.DormitoryAddBuildTest" />
-                <testcase name="testAddStu" time="3.368" classname="com.selenium.testCase.DormitoryAddBuildTest" />
-                <testcase name="testAddStu" time="6.658" classname="com.selenium.testCase.DormitoryAddBuildTest" />
-                <testcase name="testAddStu" time="3.413" classname="com.selenium.testCase.DormitoryAddBuildTest" />
-                <testcase name="testAddStu" time="3.356" classname="com.selenium.testCase.DormitoryAddBuildTest" />
+            <testcase name="testAddStu" time="3.395" classname="com.selenium.testCase.DormitoryAddBuildTest" />
+                <testcase name="testAddStu" time="3.389" classname="com.selenium.testCase.DormitoryAddBuildTest" />
+                <testcase name="testAddBuild" time="2.428" classname="com.selenium.testCase.DormitoryAddBuildTest" />
+                <testcase name="testAddStu" time="3.365" classname="com.selenium.testCase.DormitoryAddBuildTest" />
+                <testcase name="testAddStu" time="6.645" classname="com.selenium.testCase.DormitoryAddBuildTest" />
+                <testcase name="entryRoom" time="4.122" classname="com.selenium.testCase.DormitoryAddBuildTest" />
+                <testcase name="testAddStu" time="3.381" classname="com.selenium.testCase.DormitoryAddBuildTest" />
+                <testcase name="testAddRoom" time="9.760" classname="com.selenium.testCase.DormitoryAddBuildTest" />
       
 </testsuite>

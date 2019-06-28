@@ -43,7 +43,7 @@ public class DormitoryAddBuildTest extends CaseBase{
 	
 	@AfterClass
 	public void afterClass() {
-		//driver.stop();
+		driver.stop();
 	}
 	
 	@DataProvider(name = "addbuildinfo")

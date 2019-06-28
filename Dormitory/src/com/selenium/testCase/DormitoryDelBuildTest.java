@@ -57,7 +57,7 @@ public class DormitoryDelBuildTest extends CaseBase{
 	
 	@AfterClass
 	public void afterClass() {
-		//driver.stop();
+		driver.stop();
 	}
 	
 	@DataProvider(name = "delbuildinfo")
@@ -71,8 +71,16 @@ public class DormitoryDelBuildTest extends CaseBase{
 	public void delBuild(String buildname,String delText) {
 		delpro.delBuild(buildname,delText);
 	}
+	
 	@Test
 	public void delRoom() {
+		delpro.driver.fresh();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		delpro.delRoom();
 	}
 	
