@@ -8,14 +8,18 @@ import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 
 
 public class DriverBase{
 	
 	public WebDriver driver;
+	public WebDriverWait wait;
 	public DriverBase(Browser browser) {
 		 this.driver = DriverFactory.getDriver(browser);
+		 this.wait = new WebDriverWait(driver,10);
 	}
 	
 	/*
@@ -135,5 +139,17 @@ public class DriverBase{
 		JavascriptExecutor js = ((JavascriptExecutor)driver);
 		return js;
 	}
+	
+	public void waitElementPresence(By by) {
+		wait.until(ExpectedConditions.presenceOfElementLocated(by));
+	}
+	
+	public void waitElementClickable(WebElement element) {
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
+	
+	
+	
 	
 }

@@ -232,139 +232,227 @@ public class DormitoryPage extends BasePage{
 		this.click(this.addRoomCheckBtnEle());
 	}
 	//获取新增的宿舍的ele list
-		public List<WebElement> addedRoomEles(){
-			return this.elementList(getByLocator.getLocator("roomList"));
-		}
-		//鼠标移到新增的宿舍上
-		public void mouseoverAddedRoom(WebElement ele) {
-			driver.mouseOverAction(ele);
-		}
-		//获取宿舍删除按钮的ele list
-		public List<WebElement> addedRoomDelEles(){
-			return this.elementList(getByLocator.getLocator("roomListDel"));
-		}
+	public List<WebElement> addedRoomEles(){
+		return this.elementList(getByLocator.getLocator("roomList"));
+	}
+	//鼠标移到新增的宿舍上
+	public void mouseoverAddedRoom(WebElement ele) {
+		driver.mouseOverAction(ele);
+	}
+	//获取宿舍删除按钮的ele list
+	public List<WebElement> addedRoomDelEles(){
+		return this.elementList(getByLocator.getLocator("roomListDel"));
+	}
 		
-		//宿舍删除确定按钮ele
-		public WebElement confirmDelEle() {
-			return this.element(getByLocator.getLocator("roomDelConfrim"));
+	//宿舍删除确定按钮ele
+	public WebElement confirmDelEle() {
+		return this.element(getByLocator.getLocator("roomDelConfrim"));
+	}
+	//点击宿舍删除按钮
+	public void clickAddedRoomDel(int i) {
+		this.click(this.addedRoomDelEles().get(i));
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		//点击宿舍删除按钮
-		public void clickAddedRoomDel(int i) {
-			this.click(this.addedRoomDelEles().get(i));
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			this.click(this.confirmDelEle());
-		}
+		this.click(this.confirmDelEle());
+	}
 		
-		//点击楼宇
 		
-		//点击宿舍cloumn
-		public void clickAddedRoom(int i) {
-			this.click(this.addedRoomEles().get(i));
-		}
-		//获取添加学生按钮的eles
-		public List<WebElement> addStuBtnEles(){
-			return this.elementList(getByLocator.getLocator("addStuBtn"));
-		}
-		//点击添加学生按钮
-		public void clickAddStuBtn(int i) {
-			this.click(this.addStuBtnEles().get(i));
-		}
-		//点击第二个arrow，添加学生宿舍楼
-		public void clickStuArrow() {
-			this.click(this.arrowEles().get(3));
-		}
+	//点击宿舍cloumn
+	public void clickAddedRoom(int i) {
+		this.click(this.addedRoomEles().get(i));
+	}
+	//获取添加学生按钮的eles
+	public List<WebElement> addStuBtnEles(){
+		return this.elementList(getByLocator.getLocator("addStuBtn"));
+	}
+	//点击添加学生按钮
+	public void clickAddStuBtn(int i) {
+		this.click(this.addStuBtnEles().get(i));
+	}
+	//点击第二个arrow，添加学生宿舍楼
+	public void clickStuArrow() {
+		this.click(this.arrowEles().get(3));
+	}
 	
-		//班级input ele
-		public WebElement bjInput() {
-			return this.element(getByLocator.getLocator("bjinput"));
-		}
-		//点击班级input
-		public void clickBjInput() {
-			this.click(this.bjInput());
-		}
-		//获取草莓三班班级ele
-		public WebElement selectedBj() {
-			return this.element(getByLocator.getLocator("bjcaomei"));
-		}
-		//点击选择班级
-		public void clickSelectedBj() {
-			this.click(this.selectedBj());
-		}
+	//班级input ele
+	public WebElement bjInput() {
+		return this.element(getByLocator.getLocator("bjinput"));
+	}
+	//点击班级input
+	public void clickBjInput() {
+		this.click(this.bjInput());
+	}
+	//获取草莓三班班级ele
+	public WebElement selectedBj() {
+		return this.element(getByLocator.getLocator("bjcaomei"));
+	}
+	//点击选择班级
+	public void clickSelectedBj() {
+		this.click(this.selectedBj());
+	}
 		
-		//获取学生姓名input ele
-		public WebElement StuInput() {
-			return this.element(getByLocator.getLocator("Stuinput"));
-		}
+	//获取学生姓名input ele
+	public WebElement StuInput() {
+		return this.element(getByLocator.getLocator("Stuinput"));
+	}
 		//点击学生姓名input
-		public void clickStuInput() {
-			 this.click(this.StuInput());
-		}
-		//获取草莓三班，学生选择列表
-		public List<WebElement> StuList(){
-			return this.elementList(getByLocator.getLocator("StuList"));
+	public void clickStuInput() {
+			this.click(this.StuInput());
+	}
+	//获取草莓三班，学生选择列表
+	public List<WebElement> StuList(){
+		return this.elementList(getByLocator.getLocator("StuList"));
 			
-		}
-		//根据学生姓名，输入选择的学生姓名
-		public void selectStu(String stuname) {
-			List<WebElement> Stulist = this.StuList();
-			for(WebElement stu: Stulist ) {
-				if(stu.getText().equals(stuname)) {
-					this.click(stu);
-					break;
-				}
+	}
+	//根据学生姓名，输入选择的学生姓名
+	public void selectStu(String stuname) {
+		List<WebElement> Stulist = this.StuList();
+		for(WebElement stu: Stulist ) {
+			if(stu.getText().equals(stuname)) {
+				this.click(stu);
+				break;
 			}
 		}
-		//获取添加学生确定按钮ele
-		public WebElement addStuCheckBtnEle() {
-			return this.element(getByLocator.getLocator("addStuCheckBtn"));
-		}
-		//点击添加学生确定按钮
-		public void clickAddStuCheck() {
-			this.click(this.addStuCheckBtnEle());
-		}
-		//获取宿舍下学生床位信息：学生姓名
-		public List<WebElement> bedOfStuNameEles() {
-			return this.elementList(getByLocator.getLocator("bedOfStuName"));
-		}
-		//获取宿舍下学生床位信息：学生班级
-		public List<WebElement> bedOfStuClassEles(){
-			return this.elementList(getByLocator.getLocator("bedOfStuClass"));
-		}
-		//获取宿舍下学生的床位ele
-		public List<WebElement> bedOfStu(){
-			return this.elementList(getByLocator.getLocator("cardImg"));
-		}
-		//鼠标移动至学生的床位上
-		public void mouseOverBed(int index) {
-			driver.mouseOverAction(this.bedOfStu().get(index));
-		}
-		//获取学生床位上的删除按钮
-		public List<WebElement> delBed() {
-			return this.elementList(getByLocator.getLocator("delStu"));
-		}
-		//获取学生床位删除按钮的style 信息
-		public String delBtnStyle(int index) {
-			return this.delBed().get(index).getAttribute("style");
-		}
-		//点击学生床位的删除按钮
-		public void clickDelBtnOfBed(int index) {
-			this.click(this.delBed().get(index));
-		}
-		//获取删除学生床位的确定按钮元素
-		public WebElement delStuCheckBtnEle() {
-			return this.element(getByLocator.getLocator("delStuCheckBtn"));
-		}
-		//点击删除学生床位确定按钮
-		public void clickdelStuCheckBtn() {
-			this.click(this.delStuCheckBtnEle());
-		}
+	}
+	//获取添加学生确定按钮ele
+	public WebElement addStuCheckBtnEle() {
+		return this.element(getByLocator.getLocator("addStuCheckBtn"));
+	}
+	//点击添加学生确定按钮
+	public void clickAddStuCheck() {
+		this.click(this.addStuCheckBtnEle());
+	}
+	//获取宿舍下学生床位信息：学生姓名
+	public List<WebElement> bedOfStuNameEles() {
+		return this.elementList(getByLocator.getLocator("bedOfStuName"));
+	}
+	//获取宿舍下学生床位信息：学生班级
+	public List<WebElement> bedOfStuClassEles(){
+		return this.elementList(getByLocator.getLocator("bedOfStuClass"));
+	}
+	//获取宿舍下学生的床位ele
+	public List<WebElement> bedOfStu(){
+		return this.elementList(getByLocator.getLocator("cardImg"));
+	}
+	//鼠标移动至学生的床位上
+	public void mouseOverBed(int index) {
+		driver.mouseOverAction(this.bedOfStu().get(index));
+	}
+	//获取学生床位上的删除按钮
+	public List<WebElement> delBed() {
+		return this.elementList(getByLocator.getLocator("delStu"));
+	}
+	//获取学生床位删除按钮的style 信息
+	public String delBtnStyle(int index) {
+		return this.delBed().get(index).getAttribute("style");
+	}
+	//点击学生床位的删除按钮
+	public void clickDelBtnOfBed(int index) {
+		this.click(this.delBed().get(index));
+	}
+	//获取删除学生床位的确定按钮元素
+	public WebElement delStuCheckBtnEle() {
+		return this.element(getByLocator.getLocator("delStuCheckBtn"));
+	}
+	//点击删除学生床位确定按钮
+	public void clickdelStuCheckBtn() {
+		this.click(this.delStuCheckBtnEle());
+	}
 		
-		
+	/**
+	 * ********************************************************************************
+	 * 导入导出寝室信息功能部分
+	 * */
+	
+	
+	//获取【管理寝室信息】按钮元素
+	public WebElement getOperateBtnElement() {
+		return this.element(getByLocator.getLocator("operateBtn"));
+	}
+	//鼠标移至【管理寝室信息】按钮操作
+	public void mouseoverOperateBtn() {
+		driver.mouseOverAction(getOperateBtnElement());
+	}
+	//获取【管理寝室信息】下的3个导入导出按钮的元素
+	public List<WebElement> getOperatesElements(){
+		return this.elementList(getByLocator.getLocator("operateList"));
+	}
+	//在list中查找导入导出按钮并点击
+	public void clickOperate(String operateName) {
+		List<WebElement> operatesList = this.getOperatesElements();
+		for(WebElement op:operatesList) {
+			if(op.getText().equals(operateName)) {
+				op.click();
+				break;
+			}
+		}
+	}
+	//获取  上传未入住信息标题  元素
+	public WebElement getUploadTitleElement() {
+		return this.element(getByLocator.getLocator("uploadTitle"));
+	}
+	
+	//获取 下载模板（未入住） 按钮元素
+	public WebElement getDownloadModelElement() {
+		return this.element(getByLocator.getLocator("downloadModel"));
+	}
+	
+	//点击  下载模板（未入住） 按钮 操作
+	public void clickDownloadModel() {
+		this.click(getDownloadModelElement());
+	}
+	
+	//获取 上传 按钮的元素
+	public WebElement getUploadInputElement() {
+		return this.element(getByLocator.getLocator("uploadInput"));
+	}
+	
+	//上传 学生入住信息
+	public void sendkeysUploadDormitoryRecord(String filepath) {
+		this.sendKeysFiles(getUploadInputElement(), filepath);
+	}
+	
+	//获取 上传确定按钮的元素
+	public WebElement getUploadCheckElement() {
+		return this.element(getByLocator.getLocator("uploadCheckBtn"));
+	}
+	//点击 上传确定按钮
+	public void clickUploadCheck() {
+		this.click(getUploadCheckElement());
+	}
+	//点击 寝室楼下来箭头
+	public void clickUploadArrow() {
+		this.click(this.arrowEles().get(4));
+	}
+	//点击 上传测试楼宇的1层 
+	public void clickUploadFloor() {
+		this.clickBuild(5);
+	}
+	//获取 错误信息框元素
+	public WebElement errorTableElement() {
+		return this.element(getByLocator.getLocator("errorTable"));
+	}
+	//获取 上传测试楼宇101 的入住人数的元素
+	public List<WebElement> getCheckInNumElements() {
+		return this.elementList(getByLocator.getLocator("checkInNum"));
+	}
+	//返回入住总人数
+	public String getCheckInNum() {
+		return this.getCheckInNumElements().get(0).getText();
+	}
+	//等待总人数显示
+	public void waitUntilCheckInNum() {
+		driver.waitElementPresence(getByLocator.getLocator("checkInNum"));
+	}
+	
+	
+	
+	
+	
 		
 		
 		
