@@ -1,9 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite" parallel="none">
+<!--  <listeners>
+	<listener class-name = "com.selenium.util.ScreenFailtureListener"></listener>
+</listeners>-->
+
 <test name="NewTest1" >
   <classes>
-	<class name="com.selenium.testCase.LoginTest"></class>
-	<class name="com.selenium.testCase.DormitoryDelBuildTest">
+	<!--<class name="com.selenium.testCase.LoginTest"></class>
+	  <class name="com.selenium.testCase.DormitoryDelBuildTest">
 	<methods>
 	<include name = 'delBuild'></include>
 	<include name = 'delRoom'></include>
@@ -18,7 +22,8 @@
 	<include name = 'entryRoom'></include>
 	<include name = 'testAddStu'></include>
 	</methods>
-	</class>
+	</class>-->
+	<class name="com.selenium.testCase.DormitoryUploadTest"></class>
   </classes>
 </test>
 </suite> <!-- Suite -->

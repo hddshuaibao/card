@@ -1,5 +1,6 @@
 package com.selenium.page;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import com.selenium.util.getByLocator;
 
 public class BasePage {
 
+	final private String filepath = "C:\\Users\\wangh\\Downloads";
 	public DriverBase driver;
 	public BasePage(DriverBase driver) {
 		this.driver = driver;
@@ -70,6 +72,14 @@ public class BasePage {
 			System.out.println(element+"元素为空");
 		}
 	}
+	//上传文件
+	public void sendKeysFiles(WebElement element,String filepath) {
+		if(element != null) {
+			element.sendKeys(filepath);
+		}else {
+			System.out.println(element+"元素为空");
+		}
+	}
 	
 	
 	/*
@@ -92,6 +102,17 @@ public class BasePage {
 	public void assertTextIs(String actualtext,String expectedtext) {
 		Assert.assertEquals(actualtext, expectedtext);
 	}
+	//返回文件文件数量
+	public int fileNumber() {
+		File dir = new File(filepath);
+		File[] dir_contents = dir.listFiles();
+		return dir_contents.length;
+	}
+	
+	
+	
+	
+	
 	/**
 	 * 遍历应用，进入想要的应用
 	 * */
