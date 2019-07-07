@@ -102,6 +102,7 @@ public class CardPro {
 	 * 删除卡号
 	 * */
 	public void delcard(String cardno,String classname) {
+		boolean ifdelCard = false;
 		logger.info("开始删除卡号---------------");
 		this.searchClass(classname);
 		cp.clickradio();
@@ -124,7 +125,12 @@ public class CardPro {
 		}
 		cp.clickdel();
 		logger.info("点击删除卡号");
-		Assert.assertEquals(cp.addedCardNo(), cardno);
+		try {
+			cp.addedCardNo();
+		}catch(Exception e) {
+			ifdelCard = true;
+		}
+		Assert.assertEquals(ifdelCard, true);
 		logger.info("删除卡号成功");
 	}
 	
@@ -149,21 +155,6 @@ public class CardPro {
 		}else {
 			logger.info("-------------------点击选择老师失败"+i);
 		}
-		try{
-			cp.delTeacherCardEles();
-			logger.info("-------------------删除已有卡片");
-			cp.clickDelTeacherCard();
-			cp.driver.alertOk();
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (NoSuchElementException e) {
-			logger.info("-------------------改老师没有卡片");
-		}
-		
 		logger.info("-------------------输入卡号");
 		cp.sendkeysTeacherCardNO(cardno);
 		logger.info("-------------------点击新增");
@@ -185,6 +176,7 @@ public class CardPro {
 	
 	//在aftercalss 里del 老师卡片
 	public void delTeacherCard(int i) {
+		boolean ifdelCard = false;
 		logger.info("-------------------开始删除老师卡片数据");
 		cp.teacherInputClick(i);
 		if(cp.teacherInputList().get(i-1).isSelected()) {
@@ -192,10 +184,22 @@ public class CardPro {
 		}else {
 			logger.info("-------------------点击选择老师失败"+i);
 		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		try{
 			cp.delTeacherCardEles();
-			logger.info("-------------------删除已有卡片");
+			logger.info("-------------------开始删除卡片");
 			cp.clickDelTeacherCard();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			cp.driver.alertOk();
 			try {
 				Thread.sleep(2000);
@@ -203,9 +207,19 @@ public class CardPro {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} catch (NoSuchElementException e) {
-			logger.info("-------------------改老师没有卡片");
+			try {
+				cp.addedCardNo();
+			}catch(Exception e) {
+				ifdelCard = true;
+			}
+			Assert.assertEquals(ifdelCard, true);
+			logger.info("删除卡号成功");
+		} catch (Exception e) {
+			logger.info("-------------------该老师没有卡片，不需要删除");
 		}
+		
+		
+		
 	}
 	
 	
