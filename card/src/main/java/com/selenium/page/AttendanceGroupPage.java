@@ -250,6 +250,106 @@ public class AttendanceGroupPage extends BasePage{
 		}
 	}
 	
+	//获取 tab 元素
+	public List<WebElement> tabsElement(){
+		return this.elementList(getByLocator.getLocator("tabs"));
+	}
+	
+	//点击 tab，索引0:考勤组管理，1：教师考勤组设置，2：学生考勤设置，3：学生考勤组设置，4：教师宿舍门禁组设置
+	public void clickTab(int indext) {
+		this.click(this.tabsElement().get(indext));
+	}
+	
+	//获取 老师考勤管理的选择框元素
+	public WebElement selectElement(){
+		return this.element(getByLocator.getLocator("teacherSelect"));
+	} 
+	
+	//获取  老师考勤管理的选择框内容元素
+	public List<WebElement> AttendanceGroupElements(){
+		return this.elementList(selectElement(), getByLocator.getLocator("teacherSelectOption"));
+	}
+	//点击 选择 考勤组
+	public void clickAttendanceGroup(int index) {
+		this.click(this.AttendanceGroupElements().get(index));
+	}
+	
+	//获取导出元素
+	public WebElement downloadElement(){
+		return this.element(getByLocator.getLocator("downloadBtn"));
+	} 
+	//点击导出
+	public void clickDownload() {
+		this.click(this.downloadElement());
+	}
+	
+	//获取 学生考勤组选择框
+	public WebElement selectStuElement(){
+		return this.element(getByLocator.getLocator("stuSelect"));
+	} 
+	
+	//获取  学生考勤管理的选择框内容元素
+	public List<WebElement> StuAttendanceGroupElements(){
+		return this.elementList(selectStuElement(), getByLocator.getLocator("teacherSelectOption"));
+	}
+	//点击 选择 考勤组
+	public void clickStuAttendanceGroup(int index) {
+		this.click(this.StuAttendanceGroupElements().get(index));
+	}
+	//获取 学生班级选择框的元素
+	public WebElement getSelectClass(){
+		return this.element(getByLocator.getLocator("classSelect"));
+	} 
+	
+	//获取导出元素
+	public WebElement downloadStuElement(){
+		return this.element(getByLocator.getLocator("downloadStuBtn"));
+	} 
+	//点击导出
+	public void clickStuDownload() {
+		this.click(this.downloadStuElement());
+	}
+	
+	// 获取 导入按钮元素
+	public List<WebElement> getUpload() {
+		return this.elementList(getByLocator.getLocator("uploadInput"));
+	}
+	
+	//上传 导入 考勤组
+	public void sendkeysAttGp(int index,String value) {
+		this.sendKeys1(getUpload().get(index), value);
+		
+	}
+	
+	//上传 alert 信息
+	public WebElement getAlert() {
+		return this.element(getByLocator.getLocator("alertInfo"));
+	}
+	
+	//等待alert 信息
+	public void waitAlert() {
+		driver.waitElementPresence(getByLocator.getLocator("alertInfo"));
+	}
+	
+	//获取 总数 的元素
+	public List<WebElement> getSum(){
+		return this.elementList(getByLocator.getLocator("strong"));
+	}
+	
+	//获取 总数，把总数转化为int 类型
+	public int getSumInt() {
+		String sumS = this.getSum().get(2).getText();
+		int sumInt = Integer.valueOf(sumS);
+		return sumInt;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

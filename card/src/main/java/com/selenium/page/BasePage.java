@@ -1,10 +1,12 @@
 package com.selenium.page;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import com.selenium.base.DriverBase;
@@ -13,10 +15,19 @@ import com.selenium.util.getByLocator;
 
 public class BasePage {
 
+	final private static String filepath = "C:\\Users\\wangh\\Downloads";
 	public DriverBase driver;
 	public BasePage(DriverBase driver) {
 		this.driver = driver;
 	}
+	
+	/**
+	 * select 选择框处理
+	 * */
+	public Select select(WebElement ele) {
+		return new Select(ele);
+	}
+	
 	
 	/*
 	 *定位元素 方法
@@ -68,6 +79,21 @@ public class BasePage {
 		}
 	}
 	
+	public void sendKeys1(WebElement element,String value) {
+		if(element != null) {
+			element.sendKeys(value);
+		}else {
+			System.out.println(element+"元素为空");
+		}
+	}
+	
+	//返回文件文件数量
+		public int fileNumber() {
+			File dir = new File(filepath);
+			File[] dir_contents = dir.listFiles();
+			return dir_contents.length;
+		}
+		
 	
 	/*
 	 * 判断元素是否显示
@@ -125,4 +151,7 @@ public class BasePage {
 			}
 		}
 	}
+	
+
+
 }
