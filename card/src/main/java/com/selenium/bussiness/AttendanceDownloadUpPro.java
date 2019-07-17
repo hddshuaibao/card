@@ -37,10 +37,16 @@ public class AttendanceDownloadUpPro {
 	 *导入成功
 	 * */
 	public void uploadAttGp(int index,String filepath,String alertinfo) {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		logger.info("----------------开始上传考勤组信息");
 		agp.sendkeysAttGp(index-1,filepath);
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -50,6 +56,7 @@ public class AttendanceDownloadUpPro {
 		System.out.println(actualalertinfo);
 		if(!actualalertinfo.contains(alertinfo)) {
 			Assert.fail("actual:"+actualalertinfo+"expect:"+alertinfo);
+			
 		}
 		//Assert.assertSame(agp.getAlert().getText(), alertinfo);
 		//Assert.assertEquals(agp.getAlert().getText(), alertinfo);
@@ -114,27 +121,29 @@ public class AttendanceDownloadUpPro {
 				e.printStackTrace();
 			}
 		}
-		for(int i = 0;i<agp.StuAttendanceGroupElements().size();i++) {
-			agp.clickStuAttendanceGroup(i);;
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			for(int i = 0;i<agp.StuAttendanceGroupElements().size();i++) {
+				agp.clickStuAttendanceGroup(i);;
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				int beforefile = agp.fileNumber();
+				agp.clickStuDownload();;
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				int afterfile = agp.fileNumber();
+				Assert.assertEquals(afterfile, beforefile+1);
+				logger.info("-----------------------"+agp.StuAttendanceGroupElements().get(i).getText()+"下载成功");
 			}
-			
-			int beforefile = agp.fileNumber();
-			agp.clickStuDownload();;
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			int afterfile = agp.fileNumber();
-			Assert.assertEquals(afterfile, beforefile+1);
-			logger.info("-----------------------"+agp.StuAttendanceGroupElements().get(i).getText()+"下载成功");
-		}
+		
+		
 		
 		try {
 			Thread.sleep(2000);

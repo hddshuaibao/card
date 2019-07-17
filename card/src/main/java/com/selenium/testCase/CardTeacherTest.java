@@ -25,7 +25,7 @@ public class CardTeacherTest extends CaseBase{
 		this.driver = InitDriver(Browser.CHROME);
 		this.cookie = new handleCookie(driver);
 		this.cardpro = new CardPro(driver);
-		this.pro = new ProUtil("/Users/space/eclipse-workspace/card/cookie.properties");
+		this.pro = new ProUtil(pro.getPro("cookielocation"));
 		driver.getUrl(pro.getPro("kqcardUrl_1"));
 		driver.delAllCookies();
 		cookie.setCookie("JSESSIONID_COOKIE");
@@ -48,7 +48,7 @@ public class CardTeacherTest extends CaseBase{
 	
 	@DataProvider(name = "cardno")
 	public Object[][] getData() throws IOException{
-		String filepath = "/Users/space/eclipse-workspace/card/teacherCardNo.xls";
+		String filepath = "/Users/space/gitdir/card/card/teacherCardNo.xls";
 		return DataProviderExcel.getData(filepath);
 	}
 	

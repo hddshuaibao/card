@@ -23,7 +23,7 @@ public class DormitoryAddBuildTest extends CaseBase{
 		this.dabp = new DormitoryAddBuildPro(driver);
 		this.handleC = new handleCookie(driver);
 		this.dtp = new DormitoryPage(driver);
-		this.pro = new ProUtil("/Users/space/eclipse-workspace/card/cookie.properties");
+		this.pro = new ProUtil(pro.getPro("cookielocation"));
 		driver.getUrl(pro.getPro("kqgpUrl_1"));
 		driver.delAllCookies();
 		handleC.setCookie("JSESSIONID_COOKIE");

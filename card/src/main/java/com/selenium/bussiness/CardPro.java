@@ -1,7 +1,6 @@
 package com.selenium.bussiness;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 
 import com.selenium.base.DriverBase;
@@ -19,6 +18,115 @@ public class CardPro {
 		this.driver = driver;
 		this.cp = new CardPage(driver);
 	}
+	
+	/**
+	 * 进入tab 页 老师配卡，批量配卡，智能硬件，摄像头视频
+	 * @throws InterruptedException 
+	 * */
+	public void entryTabs(String tabname) throws InterruptedException {
+		Thread.sleep(2000);
+		if(tabname.equals("老师配卡")) {
+			cp.teacherCardClick();
+		}else if(tabname.equals("批量配卡")) {
+			cp.batchCardEle().click();
+		}else if(tabname.equals("智能硬件")) {
+			cp.intelligentEle().click();
+		}else if(tabname.equals("摄像头视频")) {
+			cp.cameraEle().click();
+		}else if(tabname.equals("学生配卡")) {
+			cp.stuCardEle().click();
+		}else {
+			logger.info("------------------没有这么个tab页");
+		}
+		logger.info("------------------进入"+tabname+"页");
+		Thread.sleep(2000);
+	}
+	
+	/**
+	 * 批量上传配卡数据,新卡配置
+	 * @throws InterruptedException 
+	 * */
+	public void batchUploadCard(String tabname,String filepath,String expectalerttext) throws InterruptedException {
+		this.entryTabs(tabname);
+		cp.batchCardUploadInputEle().sendKeys(filepath);
+		Thread.sleep(5000);
+		driver.waitAlertVisible();
+		String alerttext = driver.getAlertText();
+		driver.alertOk();
+		Assert.assertEquals(alerttext, expectalerttext);
+		logger.info("---------------------卡片更新成功！");
+		
+	}
+	/**
+	 * 根据姓名搜索
+	 * @throws InterruptedException 
+	 * */
+	public void searchOnName(String tabname,String name) throws InterruptedException {
+		if(tabname.equals("学生配卡")) {
+			cp.searchInputEle().clear();
+			cp.searchInputEle().sendKeys(name);
+			cp.stuSearchBtnEle().click();
+		}else if(tabname.equals("老师配卡")) {
+			cp.searchInputTeaEle().clear();
+			cp.searchInputTeaEle().sendKeys(name);
+			cp.teaSearchBtnEle().click();
+		}
+		Thread.sleep(2000);
+	}
+	
+	/**
+	 * 获取卡片数量，返回整型
+	 * */
+	public int cardNumber() {
+		driver.waitElementVisible(cp.cardNoEle());
+		String cardno = cp.cardNoEle().getText();
+		int number = Integer.valueOf(cardno);
+		return number;
+	}
+	
+	/**
+	 * 验证删除成功
+	 * */
+	public boolean checkIfdel() {
+		boolean checkdel = true;
+		try {
+			cp.delcardEle().get(0);
+			logger.info("-----------------删除失败");
+			checkdel = false;
+		}catch (Exception e) {
+			logger.info("-----------------删除成功");
+		}
+		return checkdel;
+	}
+	
+	
+	/**
+	 * 删除批量上传的卡号数据，包括学生卡号和老师卡号
+	 * @throws InterruptedException 
+	 * */
+	public void delBatchCard(String tabname,String name) throws InterruptedException {
+		this.entryTabs(tabname);
+		this.searchOnName(tabname, name);
+		if(tabname.equals("学生配卡")) {
+			cp.clickradio();
+		}else if (tabname.equals("老师配卡")) {
+			cp.radioTeaEle().click();
+		}
+		Thread.sleep(1000);
+		int delno = cp.delcardEle().size();
+		for(int i = 0;i<delno;i++) {
+			driver.waitElementClickable(cp.delcardEle().get(0));
+			cp.clickdel(0);
+			Thread.sleep(1000);
+		}
+		Thread.sleep(1000);
+		Assert.assertEquals(this.checkIfdel(), true);
+		logger.info("-----------------卡号数据删除成功！");
+		
+	}
+	
+	
+	
 	
 	/**
 	 * search class method
@@ -99,7 +207,7 @@ public class CardPro {
 		}
 	}
 	/**
-	 * 删除卡号
+	 * 删除学生卡号
 	 * */
 	public void delcard(String cardno,String classname) {
 		boolean ifdelCard = false;
@@ -117,13 +225,13 @@ public class CardPro {
 		}else {
 			logger.info("点击选择学生失败");
 		}
-		if(cp.assertElementIs(cp.delcardEle())) {
+		if(cp.assertElementIs(cp.delcardEle().get(0))) {
 			
 		}else { 
 			logger.info("并没有要删除的卡号");
 			this.addCard(cardno,classname);
 		}
-		cp.clickdel();
+		cp.clickdel(0);
 		logger.info("点击删除卡号");
 		try {
 			cp.addedCardNo();

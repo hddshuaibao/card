@@ -23,7 +23,7 @@ public class AttendanceGClockTest extends CaseBase{
 		this.driver = InitDriver(Browser.CHROME);
 		this.agcp = new AttendanceGroupClockPro(driver);
 		this.handC = new handleCookie(driver);
-		this.pro = new ProUtil("E:\\eclipseJEE\\workplace\\weixt_02\\cookie.properties");
+		this.pro = new ProUtil(pro.getPro("cookielocation"));
 		driver.getUrl(pro.getPro("kqgpUrl"));
 		driver.delAllCookies();
 		handC.setCookie("JSESSIONID_COOKIE");

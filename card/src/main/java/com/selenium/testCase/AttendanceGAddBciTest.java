@@ -29,7 +29,7 @@ public class AttendanceGAddBciTest extends CaseBase{
 		this.agp = new AttendanceGAddBciPro(driver);
 		this.agpage = new AttendanceGroupPage(driver);
 		this.handC = new handleCookie(driver);
-		this.pro = new ProUtil("E:\\eclipseJEE\\workplace\\weixt_02\\cookie.properties");
+		this.pro = new ProUtil(pro.getPro("cookielocation"));
 		driver.getUrl(pro.getPro("kqgpUrl"));
 		driver.delAllCookies();
 		handC.setCookie("JSESSIONID_COOKIE");

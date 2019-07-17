@@ -3,22 +3,20 @@
 <test name="NewTest1" >
   <classes>
 	<class name="com.selenium.testCase.LoginTest"></class>
-	<class name="com.selenium.testCase.CardStuTest"></class>
-	<class name="com.selenium.testCase.CardTeacherTest"></class>
-	 
-  </classes>
-  
-</test>
-  <!--
-  不用的testcase放这里
-  <class name="com.selenium.testCase.LoginTest"></class>
-  <class name="com.selenium.testCase.AttendanceGClockTest"></class>
-  <class name="com.selenium.testCase.AttendanceGAddBciTest"></class>
-  <class name="com.selenium.testCase.CardTest"></class>
-  
-  <methods>
+	<class name="com.selenium.testCase.AttendanceGClockTest"></class>
+    <class name="com.selenium.testCase.AttendanceGAddBciTest"></class>
+    <class name="com.selenium.testCase.CardStuTest"></class>
+  	<methods>
 	 <include name="testAddCard"></include>
 	 <include name="testDelCard"></include>
 	 <include name="testExport"></include>
-	 </methods> -->
-</suite> <!-- Suite -->
+	 <include name="batchCardTest"></include>
+	 <include name="delBatchCardTest"></include>
+	</methods>
+	<class name="com.selenium.testCase.CardTeacherTest"></class>
+	<!-- <class name="com.selenium.testCase.TeacherAttendanceRecordTest"></class> -->
+	<class name="com.selenium.testCase.AttendanceDownloadUpTest"></class>
+  </classes>
+  
+</test>
+</suite> 

@@ -8,14 +8,18 @@ import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 
 
 public class DriverBase{
 	
 	public WebDriver driver;
+	public WebDriverWait wait;
 	public DriverBase(Browser browser) {
 		 this.driver = DriverFactory.getDriver(browser);
+		 this.wait = new WebDriverWait(driver,10);
 	}
 	
 	/*
@@ -46,6 +50,11 @@ public class DriverBase{
 	public void alertNo() {
 		driver.switchTo().alert().dismiss();
 	}
+	//获取alert text
+	public String getAlertText() {
+		return driver.switchTo().alert().getText();
+	}
+	
 	
 	/**
 	 * 定位元素封装
@@ -130,5 +139,24 @@ public class DriverBase{
 		JavascriptExecutor js = ((JavascriptExecutor)driver);
 		return js;
 	}
+	//等到元素显示
+	public void waitElementPresence(By by) {
+		wait.until(ExpectedConditions.presenceOfElementLocated(by));
+	}
+	//等待元素可点击
+	public void waitElementClickable(WebElement element) {
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		
+	}
+	//等待元素显示并展示
+	public void waitElementVisible(WebElement element) {
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+	//等待alert出现
+	public void waitAlertVisible() {
+		wait.until(ExpectedConditions.alertIsPresent());
+	}
+	
+	
 	
 }

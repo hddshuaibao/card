@@ -11,7 +11,7 @@ public class handleCookie {
 	public ProUtil pro;
 	public handleCookie(DriverBase driver) {
 		this.driver = driver;
-		this.pro = new ProUtil("/Users/space/eclipse-workspace/card/cookie.properties");
+		this.pro = new ProUtil(pro.getPro("cookielocation"));
 	}
 	
 	//public void setCookie190(String cookieName) {

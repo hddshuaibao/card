@@ -6,7 +6,7 @@ public class getByLocator {
 
 	public static By getLocator(String key) {
 		
-		ProUtil pro = new ProUtil("/Users/space/eclipse-workspace/card/element.properties");
+		ProUtil pro = new ProUtil("element.properties");
 		String locator = pro.getPro(key);
 		String locatorType = locator.split(">")[0];
 		//System.out.println(locatorType);

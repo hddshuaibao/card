@@ -36,6 +36,19 @@ public class CardPage extends BasePage {
 	public WebElement teacherCardEle() {
 		return this.element(getByLocator.getLocator("teachertab"));
 	}
+	public WebElement batchCardEle() {
+		return this.element(getByLocator.getLocator("batchcard"));
+	}
+	public WebElement intelligentEle() {
+		return this.element(getByLocator.getLocator("intelligent"));
+	}
+	public WebElement cameraEle() {
+		return this.element(getByLocator.getLocator("camera"));
+	}
+	public WebElement stuCardEle() {
+		return this.element(getByLocator.getLocator("stutab"));
+	}
+	
 	//点击老师配卡tab链接ele
 	public void teacherCardClick() {
 		this.teacherCardEle().click();
@@ -116,6 +129,10 @@ public class CardPage extends BasePage {
 	 * */
 	public WebElement radioele(){
 		return this.element(getByLocator.getLocator("radio"));
+	}
+	//老师tab页radio 元素
+	public WebElement radioTeaEle() {
+		return this.element(getByLocator.getLocator("radiotea"));
 	}
 	/**
 	 * 点击radio
@@ -198,24 +215,47 @@ public class CardPage extends BasePage {
 	/**
 	 * 获取删除卡号ele
 	 * */
-	public WebElement delcardEle() {
-		return this.element(getByLocator.getLocator("delcard"));
+	public List<WebElement> delcardEle() {
+		return this.elementList(getByLocator.getLocator("delStucard"));
 	}
 	
 	/**
 	 * 点击删除按钮
 	 * */
-	public void clickdel() {
-		this.click(this.delcardEle());
+	public void clickdel(int index) {
+		this.click(this.delcardEle().get(index));
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		driver.waitAlertVisible();
 		driver.alertOk();
 	}
 	
+	//批量上传卡片，上传按钮元素
+	public WebElement batchCardUploadInputEle() {
+		return this.element(getByLocator.getLocator("carduploadinput"));
+	}
+	
+	//搜索框input 元素
+	public WebElement searchInputEle() {
+		return this.element(getByLocator.getLocator("searchinput"));
+	}
+	//老师tab页搜索框input 元素按钮
+	public WebElement searchInputTeaEle() {
+		return this.element(getByLocator.getLocator("searchinputteacher"));
+	}
+	
+	//stu 搜索按钮元素
+	public WebElement stuSearchBtnEle() {
+		return this.element(getByLocator.getLocator("stusearchbtn"));
+	}
+	//teacher 搜索按钮元素
+	public WebElement teaSearchBtnEle() {
+		return this.element(getByLocator.getLocator("teasearchbtn"));
+	}
 	
 	
 	

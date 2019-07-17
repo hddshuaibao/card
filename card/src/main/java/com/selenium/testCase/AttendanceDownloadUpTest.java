@@ -1,7 +1,6 @@
 package com.selenium.testCase;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -28,12 +27,12 @@ public class AttendanceDownloadUpTest extends CaseBase{
 		this.agpage = new AttendanceGroupPage(driver);
 		this.adup = new AttendanceDownloadUpPro(driver);
 		this.handC = new handleCookie(driver);
-		this.pro = new ProUtil("F:\\hdd\\eclipseworkspace\\card\\cookie.properties");
-		driver.getUrl(pro.getPro("kqgpUrl_2"));
+		this.pro = new ProUtil("cookie.properties");
+		driver.getUrl(pro.getPro("kqgpUrl_190"));
 		driver.delAllCookies();
 		handC.setCookie("JSESSIONID_COOKIE");
 		handC.setCookie("JSSSID_COOKIE");
-		driver.getUrl(pro.getPro("kqgpUrl_2"));
+		driver.getUrl(pro.getPro("kqgpUrl_190"));
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -48,17 +47,19 @@ public class AttendanceDownloadUpTest extends CaseBase{
 		return new Object[][] {
 		{1,""},
 		{2,""},
-		{2,"401426784"},
+		{2,"49271"},
 		};
 	}
 	
 	@DataProvider(name = "uploaddata")
 	public Object[][] uploaddata() {
 		return new Object[][] {
-		{1,"F:\\hdd\\eclipseworkspace\\card\\老师考勤组信息.xls","导入成功"},
-		{1,"F:\\hdd\\eclipseworkspace\\card\\老师考勤组信息2.xls","老师配对考勤组数据导入 ：成功 :0条;失败:2条"},
-		{2,"F:\\hdd\\eclipseworkspace\\card\\学生考勤组信息.xls","导入成功"},
-		{2,"F:\\hdd\\eclipseworkspace\\card\\学生考勤组信息2.xls","学生配对考勤组数据导入 ：成功 :0条;失败:2条"}
+		{1,"/Users/space/gitdir/card/card/老师考勤组信息.xls","导入成功"},
+		{1,"/Users/space/gitdir/card/card/老师考勤组信息2.xls","老师配对考勤组数据导入 ：成功 :0条;失败:2条"},
+		{1,"/Users/space/gitdir/card/card/老师考勤组信息3.xls","导入成功"},
+		{2,"/Users/space/gitdir/card/card/学生考勤组信息.xls","导入成功"},
+		{2,"/Users/space/gitdir/card/card/学生考勤组信息2.xls","学生配对考勤组数据导入 ：成功 :0条;失败:2条"},
+		{2,"/Users/space/gitdir/card/card/学生考勤组信息3.xls","导入成功"},
 		};
 	}
 	

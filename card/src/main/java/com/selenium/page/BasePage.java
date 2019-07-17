@@ -1,7 +1,10 @@
 package com.selenium.page;
 
 import java.io.File;
+import java.sql.DriverManager;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -13,13 +16,48 @@ import com.selenium.base.DriverBase;
 import com.selenium.util.getByLocator;
 
 
+
 public class BasePage {
 
-	final private static String filepath = "C:\\Users\\wangh\\Downloads";
+	final private static String filepath = "/Users/space/Downloads";
 	public DriverBase driver;
 	public BasePage(DriverBase driver) {
 		this.driver = driver;
 	}
+	
+	public String datePicer() throws Exception{
+	  	
+	     //Date day =new Date();
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar calendar = Calendar.getInstance();//获取日历实例  
+		//calendar.add(Calendar.DAY_OF_MONTH, 1); //明天
+		//calendar.add(Calendar.DAY_OF_MONTH, -1);//昨天
+		String dafter=df.format(calendar.getTime());
+		System.out.println(dafter);
+		return dafter;
+	}
+	
+	public java.sql.Connection sqlCon(String database,String user,String pwd) throws Exception {
+		
+		java.sql.Connection con;
+		Sqlconnect.setDriver("com.mysql.jdbc.Driver");
+		Sqlconnect.setUrl("jdbc:mysql://mysql.spacetech.com.cn:3309/"+database);
+		//Sqlconnect.setPassword("Space78901234");
+		//Sqlconnect.setUser("yunying");
+		//String user=Sqlconnect.getUser();
+		String url=Sqlconnect.getUrl();
+		//String pwd=Sqlconnect.getPassword();
+		String driver=Sqlconnect.getDriver();
+		
+		//连接数据库
+		Class.forName(driver);
+    	con=DriverManager.getConnection(url,user,pwd);
+    	if(!con.isClosed()) {
+    		System.out.println("数据库连接成功！");
+    	}
+		return con;
+	}
+	
 	
 	/**
 	 * select 选择框处理
