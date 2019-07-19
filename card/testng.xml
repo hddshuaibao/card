@@ -1,11 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Suite" parallel="none">
-<test name="NewTest1" >
+<suite name="weixiaotong" parallel="none">
+<test name="card" >
   <classes>
 	<class name="com.selenium.testCase.LoginTest"></class>
-	<class name="com.selenium.testCase.AttendanceGClockTest"></class>
-    <class name="com.selenium.testCase.AttendanceGAddBciTest"></class>
-    <class name="com.selenium.testCase.CardStuTest"></class>
+    <class name="com.selenium.testCase.CardStuTest">
   	<methods>
 	 <include name="testAddCard"></include>
 	 <include name="testDelCard"></include>
@@ -13,10 +11,20 @@
 	 <include name="batchCardTest"></include>
 	 <include name="delBatchCardTest"></include>
 	</methods>
+	</class>
 	<class name="com.selenium.testCase.CardTeacherTest"></class>
 	<!-- <class name="com.selenium.testCase.TeacherAttendanceRecordTest"></class> -->
-	<class name="com.selenium.testCase.AttendanceDownloadUpTest"></class>
+	
   </classes>
   
+</test>
+<test name="AttendanceGroup">
+<classes>
+	<class name="com.selenium.testCase.LoginTest"></class>
+	<class name="com.selenium.testCase.AttendanceGClockTest"></class>
+    <class name="com.selenium.testCase.AttendanceGAddBciTest"></class>
+    <class name="com.selenium.testCase.AttendanceDownloadUpTest"></class>
+</classes>
+
 </test>
 </suite> 

@@ -17,11 +17,11 @@ import com.selenium.util.handleCookie;
 
 public class CardStuTest extends CaseBase{
 
-	public DriverBase driver;
-	public CardPro cpro;
-	public ProUtil pro;
-	public handleCookie handleC;
-	String filepath = "/Users/space/Downloads/";
+	private DriverBase driver;
+	private CardPro cpro;
+	private ProUtil pro;
+	private handleCookie handleC;
+	private String filepath = "/Users/space/Downloads/";
 	
 	@BeforeClass
 	public void beforeClass() {

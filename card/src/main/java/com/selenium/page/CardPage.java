@@ -239,7 +239,7 @@ public class CardPage extends BasePage {
 		return this.element(getByLocator.getLocator("carduploadinput"));
 	}
 	
-	//搜索框input 元素
+	//学生tab页搜索框input 元素
 	public WebElement searchInputEle() {
 		return this.element(getByLocator.getLocator("searchinput"));
 	}
