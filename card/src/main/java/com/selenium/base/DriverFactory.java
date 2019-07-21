@@ -59,7 +59,7 @@ public class DriverFactory {
 		try {
 			if (!System.getProperties().containsKey("webdriver.chrome.driver")) {
 				System.setProperty("webdriver.chrome.driver",
-						"/Applications/Google Chrome.app/Contents/MacOS/chromedriver"); //"/Users/space/Downloads/chromedriver",
+						"F:\\hdd\\chromedriver.exe"); //"/Users/space/Downloads/chromedriver",
 			}
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			capabilities.setCapability("chrome.switches",Arrays.asList("--incognito"));			

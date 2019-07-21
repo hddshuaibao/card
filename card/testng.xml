@@ -1,6 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="weixiaotong" parallel="none">
-<test name="card" >
+<test name="login" enabled = "false">
+	<classes>
+		<class name="com.selenium.testCase.LoginTest"></class>
+	</classes>
+</test>
+
+<test name="card" enabled = "false">
   <classes>
 	<class name="com.selenium.testCase.LoginTest"></class>
     <class name="com.selenium.testCase.CardStuTest">
@@ -13,12 +19,12 @@
 	</methods>
 	</class>
 	<class name="com.selenium.testCase.CardTeacherTest"></class>
-	<!-- <class name="com.selenium.testCase.TeacherAttendanceRecordTest"></class> -->
+	 <class name="com.selenium.testCase.TeacherAttendanceRecordTest"></class> 
 	
   </classes>
   
 </test>
-<test name="AttendanceGroup">
+<test name="AttendanceGroup" enabled = "false">
 <classes>
 	<class name="com.selenium.testCase.LoginTest"></class>
 	<class name="com.selenium.testCase.AttendanceGClockTest"></class>
@@ -26,5 +32,12 @@
     <class name="com.selenium.testCase.AttendanceDownloadUpTest"></class>
 </classes>
 
+</test>
+
+
+<test name="test03">
+<classes>
+	<class name="com.selenium.testCase.PaxyTest"></class>
+</classes>
 </test>
 </suite> 

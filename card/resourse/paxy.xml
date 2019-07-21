@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "weixiaotong_02">
+<test name = "paxy">
+<classes>
+	<class name = "com.selenium.testCase.LoginTest"></class>
+	<class name = "com.selenium.testCase.TestsConfig"></class>
+	<class name = "com.selenium.testCase.PaxyTest"></class>
+</classes>
+
+</test>
+
+
+
+
+
+</suite>

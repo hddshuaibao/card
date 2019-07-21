@@ -9,9 +9,10 @@ public class handleCookie {
 
 	public DriverBase driver;
 	public ProUtil pro;
+	final String cookiefilepath = "F:\\hdd\\gitdir\\card\\card\\cookie.properties";
 	public handleCookie(DriverBase driver) {
 		this.driver = driver;
-		this.pro = new ProUtil(pro.getPro("cookielocation"));
+		this.pro = new ProUtil(cookiefilepath);
 	}
 	
 	//public void setCookie190(String cookieName) {

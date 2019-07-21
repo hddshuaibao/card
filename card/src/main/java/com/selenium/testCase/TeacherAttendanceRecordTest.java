@@ -157,35 +157,35 @@ public class TeacherAttendanceRecordTest extends CaseBase{
 	
 	
 	
-	@Test(dependsOnMethods={"AttendanceDetailBackTracking"})
-	public void VerifyBackTrackingBySql() throws Exception {
-		
-		String date = tap.datePicer();//取得今天的时间
-		//进行数据库验证
-		java.sql.Connection con = tap.sqlCon("weixin", "yunying", "Space78901234");
-		PreparedStatement pstm = null;
-		ResultSet rs = null;
-		String[] xm = new String[5];
-		String[] expectedxm = {"兰芳","兰芳","嘉怡","嘉怡","倩丽"};
-		String[] expecteddqrq = {date+" 12:00:00.0",date+" 15:00:00.0",date+" 19:00:00.0",date+" 08:00:00.0",date+" 15:00:00.0"};
-		String[] dqrq = new String[5];
-		int i = 0;
-		pstm = con.prepareStatement("SELECT * from wx_xx_paxy WHERE campusid = '33921' and remark LIKE '%补打卡人%' "
-				+ "ORDER BY id DESC Limit 5");
-		rs = pstm.executeQuery();
-		while(rs.next()){
-			xm[i] = rs.getString("xm");
-			dqrq[i] = rs.getString("dqrq");
-			System.out.println("数据库xm和dqrq字段：" + xm[i]+" "+dqrq[i]);
-			i++;
-			}
-		if(Arrays.equals(xm,expectedxm)&& Arrays.equals(dqrq,expecteddqrq) ) {
-			
-			System.out.println("补录成功");
-		}
-		Reporter.log("补录成功SQL验证成功");
-		
-	}
+//	@Test(dependsOnMethods={"AttendanceDetailBackTracking"})
+//	public void VerifyBackTrackingBySql() throws Exception {
+//		
+//		String date = tap.datePicer();//取得今天的时间
+//		//进行数据库验证
+//		java.sql.Connection con = tap.sqlCon("weixin", "yunying", "Space78901234");
+//		PreparedStatement pstm = null;
+//		ResultSet rs = null;
+//		String[] xm = new String[5];
+//		String[] expectedxm = {"兰芳","兰芳","嘉怡","嘉怡","倩丽"};
+//		String[] expecteddqrq = {date+" 12:00:00.0",date+" 15:00:00.0",date+" 19:00:00.0",date+" 08:00:00.0",date+" 15:00:00.0"};
+//		String[] dqrq = new String[5];
+//		int i = 0;
+//		pstm = con.prepareStatement("SELECT * from wx_xx_paxy WHERE campusid = '33921' and remark LIKE '%补打卡人%' "
+//				+ "ORDER BY id DESC Limit 5");
+//		rs = pstm.executeQuery();
+//		while(rs.next()){
+//			xm[i] = rs.getString("xm");
+//			dqrq[i] = rs.getString("dqrq");
+//			System.out.println("数据库xm和dqrq字段：" + xm[i]+" "+dqrq[i]);
+//			i++;
+//			}
+//		if(Arrays.equals(xm,expectedxm)&& Arrays.equals(dqrq,expecteddqrq) ) {
+//			
+//			System.out.println("补录成功");
+//		}
+//		Reporter.log("补录成功SQL验证成功");
+//		
+//	}
 	
 	
 	

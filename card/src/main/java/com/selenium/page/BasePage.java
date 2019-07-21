@@ -37,26 +37,7 @@ public class BasePage {
 		return dafter;
 	}
 	
-	public java.sql.Connection sqlCon(String database,String user,String pwd) throws Exception {
-		
-		java.sql.Connection con;
-		Sqlconnect.setDriver("com.mysql.jdbc.Driver");
-		Sqlconnect.setUrl("jdbc:mysql://mysql.spacetech.com.cn:3309/"+database);
-		//Sqlconnect.setPassword("Space78901234");
-		//Sqlconnect.setUser("yunying");
-		//String user=Sqlconnect.getUser();
-		String url=Sqlconnect.getUrl();
-		//String pwd=Sqlconnect.getPassword();
-		String driver=Sqlconnect.getDriver();
-		
-		//连接数据库
-		Class.forName(driver);
-    	con=DriverManager.getConnection(url,user,pwd);
-    	if(!con.isClosed()) {
-    		System.out.println("数据库连接成功！");
-    	}
-		return con;
-	}
+	
 	
 	
 	/**

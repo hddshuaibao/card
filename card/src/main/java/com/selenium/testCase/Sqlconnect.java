@@ -1,4 +1,6 @@
-package com.selenium.page;
+package com.selenium.testCase;
+
+import java.sql.DriverManager;
 
 public class Sqlconnect {
 	
@@ -39,5 +41,26 @@ public class Sqlconnect {
     public static void setPassword(String pss) {
     	password=pss;
     }
+    
+    public java.sql.Connection sqlCon(String database,String user,String pwd) throws Exception {
+		
+		java.sql.Connection con;
+		Sqlconnect.setDriver("com.mysql.jdbc.Driver");
+		Sqlconnect.setUrl("jdbc:mysql://mysql.spacetech.com.cn:3309/"+database);
+		String url=Sqlconnect.getUrl();
+		String driver=Sqlconnect.getDriver();
+		
+		//连接数据库
+		Class.forName(driver);
+    	con=DriverManager.getConnection(url,user,pwd);
+    	if(!con.isClosed()) {
+    		System.out.println("数据库连接成功！");
+    	}
+		return con;
+	}
+    
+    
+    
+    
     
 }

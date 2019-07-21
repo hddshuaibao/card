@@ -32,7 +32,7 @@ public class LoginTest extends CaseBase{
 	}
 	@DataProvider(name = "logindata")
 	public Object[][] getData() throws IOException{
-		String filepath="logdata.xls";
+		String filepath="F:\\hdd\\gitdir\\card\\card\\logdata.xls";
 		return DataProviderExcel.getData(filepath);
 	}
 	
