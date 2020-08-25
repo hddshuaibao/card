@@ -13,7 +13,7 @@ import org.apache.poi.ss.usermodel.Row;
 
 public class DataProviderExcel {
 
-	public static Object[][] getData(String filepath) throws IOException {
+	public static Object[][] getData(String filepath,String sheetName) throws IOException {
 		
 			// 指定excel的路径
 			File src=new File(filepath);
@@ -23,7 +23,7 @@ public class DataProviderExcel {
 			@SuppressWarnings("resource")
 			HSSFWorkbook wb=new HSSFWorkbook(fis);
 			//加载sheet，这里我们只有一个sheet,默认是sheet1
-			HSSFSheet sh= wb.getSheetAt(0);
+			HSSFSheet sh= wb.getSheet(sheetName);
 			List<Object[]> list = new ArrayList<Object[]>();
 			
 			// i 控制行

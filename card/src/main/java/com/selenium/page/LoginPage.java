@@ -82,5 +82,35 @@ public class LoginPage extends BasePage{
 		return getElementText(getUserInfoEle());
 	}
 	
+	//########################新版登录页面
+		//获取登录账户和密码的输入框
+		public WebElement inputItems(int i){
+			
+			if(i==0) {
+				return driver.driver.findElements(getByLocator.getLocator("login_form_items")).get(i);
+			}
+			else if(i==1) {
+				return driver.driver.findElements(getByLocator.getLocator("login_form_items")).get(i);
+			}
+			else {
+				return null;
+			}
+			
+			
+		}
+		
+		//获取登录按钮
+		public WebElement loginButton() {
+			return driver.driver.findElement(getByLocator.getLocator("login_form_button"));
+		}
+		
+		//获取错误的信息
+		public WebElement loginError() {
+			
+			return driver.driver.findElement(getByLocator.getLocator("login_form_error"));
+		}
+	
+	
+	
 	
 }
