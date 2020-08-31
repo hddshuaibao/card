@@ -43,19 +43,18 @@ public class LoginPro {
 	/**
 	 * 登录流程，输入用户名，输入密码，点击登录
 	 * */
-	public void loginNewVersion(String username,String password,String expected) {
-		lph.inputItems(0).sendKeys(username);
-		lph.inputItems(1).sendKeys(password);
+	public void loginNewVersion(String username,String password) {
+		lph.getUserInfoEleNew().sendKeys(username);
+		lph.getPassInfoEleNew().sendKeys(password);
 		lph.loginButton().click();
 		
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		base.assertTextIs(lph.loginError().getText(), expected);
+	}
+	
+	//验证错误信息符合预期
+	public void assertErro(String expected) {
 		
+		lph.waitErrorPresence();
+		base.assertTextIs(lph.loginError().getText(), expected);
 	}
 	
 	

@@ -42,7 +42,8 @@ public class LoginTestNewVersion extends CaseBase{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		logpro.loginNewVersion(username, password, expected);
+		logpro.loginNewVersion(username, password);
+		logpro.assertErro(expected);
 
 	}
 

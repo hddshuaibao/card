@@ -106,6 +106,12 @@ public class BasePage {
 		}
 	}
 	
+	//等待元素显示
+	public void waitElementPresence(By by) {
+		driver.waitElementPresence(by);
+	}
+	
+	
 	//返回文件文件数量
 		public int fileNumber() {
 			File dir = new File(filepath);
@@ -172,5 +178,6 @@ public class BasePage {
 	}
 	
 
+	
 
 }
